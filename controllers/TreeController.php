@@ -32,8 +32,8 @@ class TreeController
   public function __construct()
   {
     // Get EntityManager instance:
-    $emf = new EntityManagerFactory();
-    $this->entityManager = $emf->getEntityManager();
+    $ems = EntityManagerSingleton::getInstance();
+    $this->entityManager = $ems->getEM();
   }
 
   // Save a Node into database
