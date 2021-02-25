@@ -7,3 +7,9 @@ require_once 'vendor/autoload.php';
 $db = new Config\Database();
 $db->load('tree_db_empty.sql');
 
+// USE CASES:
+
+// Create Node:
+if($_GET['uc']== 'createnode') {
+    echo "Create Node";
+}

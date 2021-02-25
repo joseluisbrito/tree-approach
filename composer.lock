@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "065221d4d35704f5c8cbf211c602b177",
+    "content-hash": "44473ce5d767da3895a0255a875a2743",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1031,6 +1031,43 @@
                 "source": "https://github.com/doctrine/persistence/tree/2.1.0"
             },
             "time": "2020-10-24T22:13:54+00:00"
+        },
+        {
+            "name": "joseluisbrito/easy-rest-php",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joseluisbrito/easy-rest-php.git",
+                "reference": "b04098b0b195d1460057d6c60b4edc3d288f0138"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joseluisbrito/easy-rest-php/zipball/b04098b0b195d1460057d6c60b4edc3d288f0138",
+                "reference": "b04098b0b195d1460057d6c60b4edc3d288f0138",
+                "shasum": ""
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Rest\\": "rest/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "José Brito",
+                    "email": "joseluisbrito@gmail.com"
+                }
+            ],
+            "description": "Easy Rest using PHP7",
+            "support": {
+                "issues": "https://github.com/joseluisbrito/easy-rest-php/issues",
+                "source": "https://github.com/joseluisbrito/easy-rest-php/tree/v1.0"
+            },
+            "time": "2020-11-16T01:25:30+00:00"
         },
         {
             "name": "psr/container",
