@@ -7,7 +7,7 @@ use Controllers\TreeController;
 
 class CreateNode
 {
-    
+    private $node = null;
     public function __construct($name)
     {
         $this->createNode($name);
@@ -19,10 +19,15 @@ class CreateNode
             $node = new Node();
             $node->setName($name);
             $treeController = new TreeController();
-            return $treeController->createNode($node);            
+            $treeController->createNode($node);
+            $this->node = $node;
         } catch (Exception $ex) {
             throw $ex;
         }
+    }
+    
+    function getNode(): Node {
+        return $this->node;
     }
     
 }

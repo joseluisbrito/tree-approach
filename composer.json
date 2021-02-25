@@ -8,7 +8,8 @@
     "psr-4": {
       "Entities\\": "entities/",
       "Controllers\\":"controllers/",
-      "Config\\": "config/"
+      "Config\\": "config/",
+      "Logic\\": "logic/"
     }
   }
 }
