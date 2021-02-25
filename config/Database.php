@@ -13,16 +13,7 @@ class Database
     public function __construct()
     {
     }
-    
-    /**
-     * Check if tables exists or not
-     * If not, create them using a sql file
-     */
-    public function checkTables()
-    {
         
-    }
-    
     /**
      * Make a conection
      */
