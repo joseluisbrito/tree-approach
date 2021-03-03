@@ -1,7 +1,7 @@
 # Tree-Approach  
   
-### This is an approach to model a tree, but ***it´s not really a binary tree***,   
-it´s more like a nested list. however, works like a tree!  
+This is an approach to model a tree, but ***it´s not really a binary tree***,   
+it´s more like a nested list. However, works like a tree!  
   
 The concept is, there are many nodes, each node can point to a parentNode,  
 and the relation is saved into a parent_nodes table, i have used two tables,  
@@ -36,7 +36,7 @@ Some commands to run the container:
 
 ## Usage:  
 
-### After that, you can see the database with Adminte at:  
+##### After that, you can see the database with Adminte at:  
 
 localhost:9000  
 
@@ -51,7 +51,7 @@ You will see the database with no tables inside.
 
 To get the table structure, run index.php:  
   
-localhost:85  
+http://localhost:85  
   
 After that, the tables will be loaded (only first time, or if the tables does  
 not exists).  
