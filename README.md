@@ -58,6 +58,6 @@ not exists).
   
 To save a new node, perform a POST call to localhost:85 (with POSTMAN or INSOMNIA):    
 
-    + URL: http://localhost:85?uc=createnode
-    + BODY: { "name": "My new awesome category"}
++ URL: http://localhost:85?uc=createnode
++ BODY: { "name": "My new awesome category"}
 
