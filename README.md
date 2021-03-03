@@ -36,7 +36,7 @@ Some commands to run the container:
 
 ## Usage:  
 
-##### After that, you can see the database with Adminte at:  
+##### After that, you can see the database with Adminer at:  
 
 localhost:9000  
 
