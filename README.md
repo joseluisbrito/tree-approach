@@ -40,11 +40,11 @@ Some commands to run the container:
 
 localhost:9000  
 
-Credentials to Adminer::  
-    Host: treehost  
-    User: tree_user  
-    Password: tree_password  
-    Database: tree_db  
++ Credentials to Adminer::  
+    + Host: treehost  
+    + User: tree_user  
+    + Password: tree_password  
+    + Database: tree_db  
  
   
 You will see the database with no tables inside.  
@@ -56,8 +56,8 @@ http://localhost:85
 After that, the tables will be loaded (only first time, or if the tables does  
 not exists).  
   
-You can perform a POST call to localhost:85 to save a new node:  
+To save a new node, perform a POST call to localhost:85 (with POSTMAN or INSOMNIA):    
 
-URL: http://localhost:85?uc=createnode
-BODY: { "name": "My new awesome category"}
+    + URL: http://localhost:85?uc=createnode
+    + BODY: { "name": "My new awesome category"}
 
