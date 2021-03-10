@@ -61,3 +61,12 @@ To save a new node, perform a POST call to localhost:85 (with POSTMAN or INSOMNI
 + URL: http://localhost:85?uc=createnode
 + BODY: { "name": "My new awesome category"}
 
+To set parent node, perform a POST call to localhost:85:
+
++ URL: http://localhost:85?uc=setparentnode
++ BODY: { "node_id": 2, "parent_node_id": 1 }
+
+To fetch entire tree, perform a GET call (with empty json body):
+
++ http://localhost:85?uc=fetchjsontree
+
