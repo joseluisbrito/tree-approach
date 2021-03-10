@@ -11,9 +11,9 @@ class SetParentNode
     
     private $parentNode = null;
 
-    public function __construct(Node $node, Node $parentNode)
+    public function __construct(int $node_id, int $parent_node_id)
     {
-        $this->setParentNode($node, $parentNode);
+        $this->setParentNode($node_id, $parent_node_id);
     }
     
     /**
@@ -22,13 +22,14 @@ class SetParentNode
      * @param Node $parentNode
      * @throws \Exception
      */
-    private function setParentNode(Node $node, Node $parentNode): ParentNode
+    private function setParentNode(int $node_id, int $parent_node_id)
     {
         try {
             
             $treeController = new TreeController();
+            $node = $treeController->findNodeById($node_id);
+            $parentNode = $treeController->findNodeById($parent_node_id);
             $this->parentNode = $treeController->setParentNode($node, $parentNode);
-            
         } catch (\Exception $ex) {
             throw $ex;
         }

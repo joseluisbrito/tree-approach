@@ -56,7 +56,12 @@ class TreeController
     if($this->haveParent($node))
       throw new \Exception("This node already have a parent!");
 
-    if($this->searchChildNode($parentNode, $node))
+    // Prevent circular references
+    $this->findAllNodes();
+    $this->findAllParent();
+    $this->findRootsFromArray();
+    
+    if($this->searchChildNode($node, $parentNode))
       throw new \Exception("Relate those nodes result in a circular reference");
 
     $newParentNode = new ParentNode();
@@ -216,13 +221,16 @@ class TreeController
   // Search if node is child or ancestor of parent
   private function searchChildNode(Node $node, Node $parent)
   {
+    // Root nodes cant be pointed to a parent
+    if($this->isRootNode($node))
+        return true;
     // Search parent node of node received:
-    $pn = $this->findParent($node);
-    if(count($pn) == 0)
-      return false;
-    if($pn[0]->getParentNode() == $parent);
-      return true;
-    $this->searchChildNode($pn[0]->getParentNode(), $parent);
+    if($node->getId() === $parent->getId())
+        return true;
+    $pn = $this->findParent($parent);
+    
+    if(count($pn) > 0)
+        $this->searchChildNode($node, $pn[0]->getParentNode());
     return false;
   }
 
@@ -247,5 +255,16 @@ class TreeController
         return true;
     }
     return false;
+  }
+  
+  // Recive node and check if it is a rootNode
+  private function isRootNode(Node $node): Bool
+  {
+      foreach($this->roots_Array as $r)
+      {
+        if($r === $node && $this->hasChildrenFromArray($r))
+            return true;
+      }
+      return false;
   }
 }

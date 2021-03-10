@@ -8,8 +8,9 @@ use Controllers\TreeController;
 class FindNodeById
 {
 
-    public function __construct()
+    public function __construct(int $nod_id)
     {
+        return $this->findById($nod_id);
     }
     
     /**
@@ -18,7 +19,7 @@ class FindNodeById
      * @return Node
      * @throws \Exception
      */
-    public function findById(int $node_id): Node
+    private function findById(int $node_id): Node
     {
         try {
             

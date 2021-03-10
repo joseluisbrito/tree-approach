@@ -44,15 +44,21 @@ if($_GET['uc']== 'setparentnode') {
     $api = new Rest("POST");
     
     $node_id = $api->getBody()->node_id;
+    $parent_node_id = $api->getBody()->parent_node_id;
 
-    if(isset($name) && $name !== "") {
+    if(isset($node_id) && is_numeric($node_id)
+            && isset($parent_node_id) && is_numeric($parent_node_id)
+      ) {
 
         try {
-            $createNode = new \Logic\CreateNode($name);
 
+            $setParentNode = new \Logic\SetParentNode(
+                    $node_id,
+                    $parent_node_id
+                    );
+            
             $api->response(
-                    "The node was created with id: "
-                    .$createNode->getNode()->getId(),
+                    "The node it is now related to its parent",
                     $api->HTTP_OK);
         } catch (Exception $ex) {
             $api->response($ex->getMessage(), $api->HTTP_BAD_REQUEST);
