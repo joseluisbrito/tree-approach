@@ -71,3 +71,15 @@ if($_GET['uc']== 'setparentnode') {
     
 }
 
+// Set ParentNode:
+if($_GET['uc']== 'fetchjsontree') {
+    
+    $api = new Rest("GET");
+    
+    try {
+        $tree = new \Logic\FetchTree();
+        $api->response($tree->getTree(), $api->HTTP_OK);
+    } catch (Exception $ex) {
+        $api->response($ex->getMessage(), $api->HTTP_BAD_REQUEST);
+    }
+}
