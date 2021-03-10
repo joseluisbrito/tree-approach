@@ -172,7 +172,7 @@ class TreeController
   }
 
   // Return entire tree in array format
-  public function fetchJsonTree()
+  public function fetchTree()
   {
     $this->findAllNodes();
     $this->findAllParent();
@@ -180,7 +180,7 @@ class TreeController
     foreach ($this->roots_Array as $r) {
       array_push($this->tree,$this->retrieveChildrenFromArray($r));
     }
-    return json_encode($this->tree);
+    return $this->tree;
   }
 
   private function findRootsFromArray()
