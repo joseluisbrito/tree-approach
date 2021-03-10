@@ -16,7 +16,7 @@ class FetchTree
     private function fetchTree()
     {
         $treeController = new TreeController();
-        $this->treee = $treeController->fetchTree();
+        $this->tree = $treeController->fetchTree();
     }
     
     function getTree()
