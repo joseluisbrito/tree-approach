@@ -83,3 +83,27 @@ if($_GET['uc']== 'fetchjsontree') {
         $api->response($ex->getMessage(), $api->HTTP_BAD_REQUEST);
     }
 }
+
+// Update Node:
+if($_GET['uc']== 'updatenode') {
+    
+    $api = new Rest("POST");
+    
+    try {
+        
+        $node_id = $api->getBody()->node_id;
+        $new_name = $api->getBody()->new_name;
+        if(!isset($node_id) || !is_int($node_id)
+                || !isset($new_name) || $new_name == ""
+        ) {
+            throw new Exception("Bad arguments!");
+        }
+        
+        $updateNode = new \Logic\UpdateNode();
+        $updateNode->updateNode($node_id, $new_name);
+        $api->response("The node was updated!", $api->HTTP_OK);
+        
+    } catch (Exception $ex) {
+        $api->response($ex->getMessage(), $api->HTTP_BAD_REQUEST);
+    }
+}
