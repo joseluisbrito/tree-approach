@@ -18,7 +18,7 @@ class UpdateNode
             $treeController = new TreeController();
             $node = $treeController->findNodeById($node_id);
             $node->setName($new_name);
-            $treeController->setParentNode($node);
+            $treeController->updateNode($node);
         } catch (Exception $ex) {
             throw $ex;
         }

@@ -68,5 +68,11 @@ To set parent node, perform a POST call to localhost:85:
 
 To fetch entire tree, perform a GET call (with empty json body):
 
-+ http://localhost:85?uc=fetchjsontree
++ URL: http://localhost:85?uc=fetchjsontree
+
+To update a node (change its name):
+
++ URL: http://localhost:85?uc=updatenode
++ BODY: { "node_id": 1, "new_name": "Mis Categorias" }
+
 
