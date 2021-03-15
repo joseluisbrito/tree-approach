@@ -73,6 +73,6 @@ To fetch entire tree, perform a GET call (with empty json body):
 To update a node (change its name):
 
 + URL: http://localhost:85?uc=updatenode
-+ BODY: { "node_id": 1, "new_name": "Mis Categorias" }
++ BODY: { "node_id": 1, "new_name": "My new category name" }
 
 
